@@ -2,6 +2,8 @@ package com.example.profile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.appcompat.widget.AppCompatSpinner
 
 
@@ -13,10 +15,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        spinner = findViewById(R.id.spin_num)
-        val listOfCountries = listOf<Number>(+234,+31, +233,+245, +1,+2,+34)
-//        binding = ActivityMainBinding.inflater(layoutInflater)
-//        setContentView(binding.root)
+        val spinner = listOf<String>("+234","+31", "+233","+245")
+
+
+        findViewById<Spinner>(R.id.spin_num).adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinner)
+
 
 
 
